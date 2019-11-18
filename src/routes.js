@@ -8,7 +8,7 @@ export const routers = {
   
   // user
   users: "/users",
-  userDetail: "/userDetail",
+  userDetail: "/:userId",
   userProfile: "/userProfile",
   editProfile: "/editProfile",
   changePassword: "/changePassword",
@@ -16,8 +16,8 @@ export const routers = {
   // video
   videos: "/videos",
   upload: "/upload",
-  videoDetail :"/videoDetail",
-  editVideo: "/editVideo",
-  deleteVideo : "/deleteVideo",
+  videoDetail :"/:videoId",
+  editVideo: "/:videoId/edit",
+  deleteVideo : "/:videoId/deleteVideo",
 
 };
