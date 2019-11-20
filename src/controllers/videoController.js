@@ -1,15 +1,15 @@
 export const videosController = (req, res) => {
-  res.send("");
+  res.redirect("/");
 };
 export const uploadController = (req, res) => {
-  res.send("");
+  res.render("upload");
 };
 export const videoDetailController = (req, res) => {
-  res.send("");
+  res.render("videoDetail");
 };
 export const editVideoController = (req, res) => {
-  res.send("");
+  res.render("editVideo");
 };
 export const deleteVideoController = (req, res) => {
-  res.send("");
+  res.render("deleteVideo");
 };

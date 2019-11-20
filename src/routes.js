@@ -10,7 +10,6 @@ export const routers = {
   // user
   users: "/users",
   userDetail: "/:userId",
-  userProfile: "/userProfile",
   editProfile: "/editProfile",
   changePassword: "/changePassword",
 

@@ -1,5 +1,6 @@
 import express from "express";
 
+import path from "path";
 import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
@@ -11,6 +12,9 @@ import videoRouter from "./routers/videoRouter";
 import { routers } from "./routes";
 
 const app = express();
+
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname,"views") );
 
 app.use(cookieParser());
 app.use(bodyParser.json());

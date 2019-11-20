@@ -1,15 +1,12 @@
 export const usersController = (req, res) => {
-  res.send("User");
+  res.redirect("/");
 };
 export const userDetailController = (req, res) => {
-  res.send("userDetail");
-};
-export const userProfileController = (req, res) => {
-  res.send("userProfile");
+  res.render("userDetail");
 };
 export const editProfileController = (req, res) => {
-  res.send("editProfile");
+  res.render("editProfile");
 };
 export const changePasswordController = (req, res) => {
-  res.send("changePassword");
+  res.render("changePassword");
 };

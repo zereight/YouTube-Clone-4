@@ -1,15 +1,15 @@
 export const homeController = (req, res) => {
-  res.send("Home");
+  res.render("home");
 };
 export const loginController = (req, res) => {
-  res.send("Login");
+  res.render("login");
 };
 export const logoutController = (req, res) => {
-  res.send("Logout");
+  res.render("logout");
 };
 export const joinController = (req, res) => {
-  res.send("Join");
+  res.render("join");
 };
 export const searchController = (req, res) => {
-  res.send("Search");
+  res.render("search");
 };
