@@ -1,12 +1,10 @@
-export const usersController = (req, res) => {
-  res.redirect("/");
-};
+
 export const userDetailController = (req, res) => {
-  res.render("userDetail");
+  res.render("userDetail", {pageTitle: "userDetail"});
 };
 export const editProfileController = (req, res) => {
-  res.render("editProfile");
+  res.render("editProfile", {pageTitle: "editProfile"});
 };
 export const changePasswordController = (req, res) => {
-  res.render("changePassword");
+  res.render("changePassword", {pageTitle: "changePassword"});
 };
