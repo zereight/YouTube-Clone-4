@@ -1,7 +1,15 @@
+import { routers } from "../routes";
 
-export const uploadController = (req, res) => {
+export const getUploadController = (req, res) => {
   res.render("upload", {pageTitle: "upload"});
 };
+export const postUploadController = (req, res) => {
+  const{
+    body: {file, title, description}
+  } = req;
+  res.redirect(routers.videoDetail(324393));
+};
+
 export const videoDetailController = (req, res) => {
   res.render("videoDetail", {pageTitle: "videoDetail"});
 };

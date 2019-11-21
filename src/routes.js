@@ -1,3 +1,4 @@
+/* eslint-disable no-else-return */
 /* eslint-disable import/prefer-default-export */
 export const routers = {
   // global
@@ -9,14 +10,26 @@ export const routers = {
   
   // user
   users: "/users",
-  userDetail: "/:userId",
+  userDetail: (id) => {
+    if(id){
+      return `/users/${id}`;
+    }else{
+      return "/:userId";
+    }
+  },
   editProfile: "/editProfile",
   changePassword: "/changePassword",
 
   // video
   videos: "/videos",
   upload: "/upload",
-  videoDetail :"/:videoId",
+  videoDetail : (id)=>{
+    if(id){
+      return `/videos/${id}`;
+    }else{
+      return "/:videoId";
+    }
+  },
   editVideo: "/:videoId/edit",
   deleteVideo : "/:videoId/deleteVideo",
 
