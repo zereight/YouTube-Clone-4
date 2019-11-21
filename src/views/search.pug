@@ -1,4 +1,8 @@
 extends layouts/main
 
 block content
-  h1 search
+  .search__searchingBy
+    h3 Searching By #{searchingBy}
+  .search__videos
+  each item in videos
+    +videoBlock(item)
