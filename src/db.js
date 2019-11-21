@@ -4,8 +4,6 @@ import mongoose from "mongoose";
 
 dotenv.config();
 
-console.log(process.env.MONGO_URL);
-
 mongoose.connect(
   process.env.MONGO_URL,
   {
