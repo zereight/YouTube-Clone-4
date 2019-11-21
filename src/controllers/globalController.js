@@ -1,3 +1,5 @@
+import { routers } from "../routes";
+
 export const homeController = (req, res) => {
   res.render("home", {pageTitle: "Home"});
 };
@@ -7,9 +9,21 @@ export const loginController = (req, res) => {
 export const logoutController = (req, res) => {
   res.render("logout", {pageTitle: "Logout"});
 };
-export const joinController = (req, res) => {
+export const getJoinController = (req, res) => {
   res.render("join", {pageTitle: "Join"});
 };
+export const postJoinController = (req, res) => {
+  console.log(req);
+
+  const {body:{name, email, password1, password2}} = req;
+
+  if( password1 !== password2 ){
+    res.redirect(routers.home);
+  }
+
+  res.end();
+};
 export const searchController = (req, res) => {
-  res.render("search", {pageTitle: "Search"});
+  const { query: { term: searchingBy } } = req;
+  res.render("search", {pageTitle: "search", searchingBy});
 };
