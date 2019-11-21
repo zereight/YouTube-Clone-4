@@ -1,5 +1,5 @@
 import { routers } from "../routes";
-import {videos} from "../fakeDB";
+import {videos} from "../db";
 
 export const homeController = (req, res) => {
   res.render("home", {pageTitle: "Home", videos});
