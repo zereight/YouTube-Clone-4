@@ -37,6 +37,12 @@ export const routers = {
       return "/:videoId/edit";
     }
   },
-  deleteVideo : "/:videoId/deleteVideo",
+  deleteVideo : (id)=>{
+    if(id){
+      return `/${id}/deleteVideo`;
+    }else{
+      return "/:videoId/deleteVideo";
+    }
+  },
 
 };

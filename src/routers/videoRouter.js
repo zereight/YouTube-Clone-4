@@ -10,6 +10,6 @@ videoRouter.post(routers.upload, uploadVideo ,postUploadController);
 videoRouter.get(routers.videoDetail(), videoDetailController);
 videoRouter.get(routers.editVideo(), getEditVideoController);
 videoRouter.post(routers.editVideo(), postEditVideoController);
-videoRouter.get(routers.deleteVideo, deleteVideoController);
+videoRouter.get(routers.deleteVideo(), deleteVideoController);
 
 export default videoRouter;

@@ -3,7 +3,7 @@ extends layouts/main
 block content
   .form-container
     form(action=`/videos${routes.editVideo(video.id)}`, method='post')
-      input(type='text', placeholder='Title', name='title')
-      textarea( name='description' ) Description
+      input(type='text', placeholder='Title', name='title', value=`${video.title}`) 
+      textarea( name='description' ) #{video.description}
       input(type='submit', value="Update Video")
-    a.form-container__linnk(href=`/videos${routes.deleteVideo}`) Delete Video
+    a.form-container__linnk(href=`/videos${routes.deleteVideo(video.id)}`) Delete Video
