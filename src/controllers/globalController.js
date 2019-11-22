@@ -4,7 +4,7 @@ import Video from "../models/Video";
 export const homeController = async (req, res) => {
 
   try{
-    const videos = await Video.find({});
+    const videos = await Video.find({}).sort({_id : -1});
     res.render("home", {pageTitle: "Home", videos}); 
   }catch (error){
     console.log(error);
@@ -41,7 +41,15 @@ export const postJoinController = (req, res) => {
   res.end();
 
 };
-export const searchController = (req, res) => {
+export const searchController = async (req, res) => {
   const { query: { term: searchingBy } } = req;
-  res.render("search", {pageTitle: "search", searchingBy});
+
+  let videos = [];
+  try{
+    videos = await Video.find( { title: { $regex: searchingBy, $options: "i" } }); // insensitive option
+  }catch(error){
+    console.log(error);
+  }
+
+  res.render("search", {pageTitle: "search", searchingBy, videos});
 };

@@ -1,8 +1,12 @@
 extends layouts/main
+include mixins/videoBlock
 
 block content
   .search__searchingBy
     h3 Searching By #{searchingBy}
   .search__videos
-  each item in videos
-    +videoBlock(item)
+  if videos.length === 0
+    h5 Video Not Found
+  else
+    each item in videos
+      +videoBlock(item)
