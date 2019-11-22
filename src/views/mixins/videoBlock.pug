@@ -1,5 +1,6 @@
 mixin videoBlock(video={})
   .videoBlock
-    video.videoBlock__thumnail( src=video.videoFile, controls=true )
+    video.videoBlock__thumnail( src=video.fileUrl, controls=true )
     h4.videoBlock__title #{video.title}
+    h4.videoBlock__title #{video.description}
     h4.videoBlock__views #{video.views}

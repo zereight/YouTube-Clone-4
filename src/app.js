@@ -17,6 +17,7 @@ const app = express();
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname,"views") );
 
+app.use("/uploads", express.static("uploads")); // https://expressjs.com/ko/starter/static-files.html
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
