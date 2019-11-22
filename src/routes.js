@@ -30,7 +30,13 @@ export const routers = {
       return "/:videoId";
     }
   },
-  editVideo: "/:videoId/edit",
+  editVideo: (id) => {
+    if(id){
+      return `/${id}/edit`;
+    }else{
+      return "/:videoId/edit";
+    }
+  },
   deleteVideo : "/:videoId/deleteVideo",
 
 };

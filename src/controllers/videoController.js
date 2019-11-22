@@ -39,9 +39,38 @@ export const videoDetailController = async (req, res) => {
   }
 };
 
-export const editVideoController = (req, res) => {
-  res.render("editVideo", {pageTitle: "editVideo"});
+export const getEditVideoController = async (req, res) => {
+  const {
+    params: {
+      videoId
+    }
+  } = req;
+
+  try{
+    const video = await Video.findById( videoId );
+    res.status(200);
+    res.render("editVideo", {pageTitle: `Edit ${video.title}`, video});
+  }catch(error){
+    res.status(400);
+    console.log(error);
+    res.redirect(routers.home);
+  }
 };
+export const postEditVideoController = async (req,res) => {
+  const{
+    params: {id},
+    body: {title, description}
+  } = req;
+
+  try{
+    await Video.findOneAndUpdate({id}, {title, description});
+    res.redirect(routers.videoDetail(id));
+  }catch(error){
+    res.status(400);
+    res.redirect(routers.home);
+  }
+}
+
 export const deleteVideoController = (req, res) => {
   res.render("deleteVideo", {pageTitle: "deleteVideo"});
 };
